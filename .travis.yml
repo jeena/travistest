@@ -1,5 +1,10 @@
 script:
   - echo "testfile" > FeedTheMonkey-123.AppImage
-  - curl -F "file=@FeedTheMonkey-123.AppImage" https://file.io > res.json
-  - cat res.json
-  - cat FeedTheMonkey-123.AppImage
+  - mv FeedTheMonkey*.AppImage FeedTheMonkey.AppImage
+deploy:
+  provider: releases
+  api_key:
+    secure: "veMecbogapFKHMlozRyhzBPQx8m2jIa0FfJs+QT6eKhgVU1a9vyHO25h8Dwm+3r3qAiMHYMZpuaWBLUp2HiTLIxvVq1fHcAlRe2jYFwToXkth5AMfRvodp1vEHvdqiyNIyhmpdx+wRkWQ7vi3VJudpPOjJy/bbfxKfmgeX4fDBMTNCnOFCVZEL1iiSUOlbprymt9Vos7S3Fz3VxIPw5jXUgajTShxUaYOVnK6e5xdREd6ICgcc1e13u2BLVzrmiSarGsrW+C6wNgZC1qwjPw+RlFTQ2sUd9jBUpb9I0acfmRJFMO46ViLF5oKX5OUboEja2dGgvL3CcGdnJJ0y+3mwHombbSL47RClpNxRy5YvGtAWvt27PWypi/r2cAkj/CPqp+dndn2vELP+6qSYKO1rSilEdfb11bZIr4ro6RT8dWFWfaovDOJ2sk1y6plIuJk6TDPQdS/AjzKkv8Yjr9pR6Pamume22DQ3Lm1yFGSBceAUAV2b6d9k5Qo4AKEpNqRhYm3oQFMLHA1woz+3ZjxhePjLlRLzQcCGmWFPFwHn9lbtzsHn7M0f0H7eaxYtcR6ecYeuwRHmrnMccX1MsSBfds0YdZ/Ar+q8pHCvRl7rVoe2i9CfA8d4FmXvTLUi8XyH6Ep1NiO7lx3e9mTIHDdVChQ1EyixwVjKKZMezYeVU="
+  file: FeedTheMonkey.AppImage
+  skip_cleanup: true
+  draft: true
