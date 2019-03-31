@@ -1,3 +1,4 @@
 script:
   - echo "testfile" > FeedTheMonkey-123.AppImage
-  - curl -F "file=@FeedTheMonkey-123.AppImage" https://file.io
+  - curl -F "file=@FeedTheMonkey-123.AppImage" https://file.io > res.json
+  - cat res.json
