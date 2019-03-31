@@ -5,6 +5,4 @@ dist: trusty
 
 script:
   - echo "testfile" > FeedTheMonkey-123.AppImage
-  - curl -w "%{http_code}\n" -F "file=@$(echo FeedTheMonkey*.AppImage)" https://file.io -o url.txt
-  - cat url.txt
-  - curl https://google.com
+  - curl -H "Accept: application/json" -F "file=@$(echo FeedTheMonkey*.AppImage)" https://file.io
