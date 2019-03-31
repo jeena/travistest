@@ -1,5 +1,5 @@
 script:
   - echo "testfile" > FeedTheMonkey-123.AppImage
   - echo FeedTheMonkey*.AppImage
-  - "curl -F ""file=@$(echo FeedTheMonkey*.AppImage)"" -H ""Accept: application/json"" https://file.io"
+  - "curl -F ""file=@$(echo FeedTheMonkey*.AppImage)"" -H ""Accept: application/json"" https://file.io > url.txt"
   - cat url.txt 
