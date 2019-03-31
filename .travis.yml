@@ -4,5 +4,5 @@ sudo: require
 dist: trusty
 
 script:
-  - echo "testfile" > FeedTheMonkey-123.AppImage
+  - echo "testfile" > FeedTheMonkey-123.AppImage 
   - curl -F "file=@$(echo FeedTheMonkey*.AppImage)" https://file.io
